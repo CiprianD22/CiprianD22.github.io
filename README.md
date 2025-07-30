@@ -1,10 +1,18 @@
-## Ciprian's page
+# Ciprian's page
 
-You can use the [editor on GitHub](https://github.com/CiprianD22/CiprianD22.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Latest tips / quick solutions:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* Send HTTP Rest API request using <ins>Windows Powershell Version 7</ins> with Bearer/Token Authentication
+```powershell
+# The **Invoke-RestMethod** requires an instance of .NET SecureString in which the Bearer Token is to be stored:
+$sString = [SecureString]::new()
 
-### Markdown
+# Populate the SecureString with our Token string
+foreach ($c in "MyTokEnStrinGHexHhHhhHhHh".ToCharArray()) { $sString.AppendChar($c) }
+
+# Invoke the API call using HTTP ('irm' is the abbreviation for **Invoke-RestMethod** in Powershell
+$response = irm "https://api.host.com/client/v4/user/tokens/verify" -Authentication Bearer -Token $sString
+```
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
