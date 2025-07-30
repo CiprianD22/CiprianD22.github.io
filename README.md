@@ -1,5 +1,3 @@
-# Ciprian's page
-
 ## Latest tips / quick solutions:
 
 * Send HTTP Rest API request using <ins>Windows Powershell Version 7</ins> with Bearer/Token Authentication
